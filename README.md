@@ -30,7 +30,7 @@ Saveslot te salva de extensas búsquedas en diversas plataformas que pueden resu
 
 Una plataforma web/aplicación móvil que cuenta con funciones como:
 
-Vinculación de múltiples cuentas
-Buscador potenciado con IA
-Página de juego con logros, dificultad, guías, reseñas, plataformas y tiempo
-Sorteos de juegos - Sistema de gamificación
+-Vinculación de múltiples cuentas
+-Buscador potenciado con IA
+-Página de juego con logros, dificultad, guías, reseñas, plataformas y tiempo
+-Sorteos de juegos - Sistema de gamificación
