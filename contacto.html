@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contáctanos · SaveSlot</title>
+<meta name="description" content="Escríbele al equipo de SaveSlot.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contacto" data-section="ayuda">
+
+<main class="container page" style="max-width:1080px">
+  <div class="split">
+    <div class="side stack" style="flex:1 1 320px;gap:20px">
+      <h1 class="page-title">Contáctanos</h1>
+      <p class="muted" style="font-size:17px">¿Un problema con tu cuenta, un evento o quieres publicar un torneo? Escríbenos.</p>
+      <div class="card"><span class="xs muted">Correo</span><b style="user-select:all">[CORREO DE CONTACTO]</b></div>
+      <div class="card"><span class="xs muted">Redes</span><b>[@SAVESLOT]</b></div>
+      <a class="card card-link" href="matchplay.html" style="background:var(--ai-deep);border-color:var(--ai)"><b>¿Duda rápida?</b><span class="small soft">Pregúntale a MatchPlay.</span></a>
+    </div>
+    <form class="main panel" id="contact-form" novalidate style="padding:28px;gap:18px">
+      <div class="form-grid">
+        <div class="field"><label for="n">Nombre</label><input class="input" id="n" autocomplete="name"><span class="error-text" id="n-err" hidden></span></div>
+        <div class="field"><label for="e">Correo</label><input class="input" id="e" type="email" autocomplete="email"><span class="error-text" id="e-err" hidden></span></div>
+      </div>
+      <div class="field"><label for="t">Tema</label><select class="select" id="t"><option>Problema con mi cuenta</option><option>Eventos y pagos</option><option>Quiero organizar un torneo</option><option>Reportar contenido</option><option>Otro</option></select></div>
+      <div class="field"><label for="m">Mensaje</label><textarea class="textarea" id="m" rows="6" placeholder="Cuéntanos qué pasó"></textarea><span class="error-text" id="m-err" hidden></span></div>
+      <button class="btn btn-primary" type="submit" style="align-self:flex-start">Enviar mensaje</button>
+    </form>
+  </div>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

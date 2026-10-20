@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iniciar sesión · SaveSlot</title>
+<meta name="description" content="Inicia sesión en SaveSlot.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login" data-section="cuenta">
+
+<main style="display:flex;flex-wrap:wrap">
+  <section style="flex:1 1 440px;min-width:0;background:var(--surface);border-right:1px solid var(--line);padding:48px;display:flex;flex-direction:column;gap:28px;justify-content:center">
+    <h1 style="font-size:clamp(32px,4vw,44px);letter-spacing:-.02em;max-width:480px">Tu progreso, guardado en un solo lugar.</h1>
+    <p class="muted" style="font-size:17px;max-width:48ch">Vincula tus cuentas, ve tus logros juntos, pregunta a MatchPlay y gana XP por ayudar a la comunidad.</p>
+    <div class="stack" style="gap:10px;max-width:480px">
+      <div class="card row" style="flex-direction:row;background:var(--bg)"><span class="xs muted" style="width:72px">RANURA 01</span><b class="grow">Zelda: TOTK</b><span class="small" style="color:var(--accent-text)">62%</span></div>
+      <div class="card row" style="flex-direction:row;background:var(--bg)"><span class="xs muted" style="width:72px">RANURA 02</span><b class="grow">NieR: Automata</b><span class="small" style="color:var(--accent-text)">34%</span></div>
+      <div class="card row" style="flex-direction:row;background:var(--bg);border-style:dashed;border-color:var(--accent)"><span class="xs muted" style="width:72px">RANURA 03</span><span class="grow muted">Tu próximo juego</span></div>
+    </div>
+    <span class="xs muted">Gratis. Sin tarjeta para registrarte.</span>
+  </section>
+  <section style="flex:1 1 440px;min-width:0;padding:48px 24px;display:flex;align-items:center;justify-content:center">
+    <form id="login-form" novalidate class="stack" style="width:100%;max-width:420px;gap:18px">
+      <div class="seg" role="tablist" aria-label="Acceso"><button type="button" role="tab" aria-selected="true">Iniciar sesión</button><a id="to-signup" href="registro.html" role="tab" aria-selected="false">Crear cuenta</a></div>
+      <h2 style="font-size:30px">Hola de nuevo</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px"><button type="button" class="btn btn-secondary" data-oauth="Google">Google</button><button type="button" class="btn btn-secondary" data-oauth="Discord">Discord</button></div>
+      <div class="row small muted" style="flex-wrap:nowrap"><span style="flex:1;height:1px;background:var(--line)"></span>o con tu correo<span style="flex:1;height:1px;background:var(--line)"></span></div>
+      <div class="field"><label for="em">Correo</label><input class="input" id="em" type="email" autocomplete="email" aria-describedby="em-err"><span class="error-text" id="em-err" hidden></span></div>
+      <div class="field"><div class="row between"><label for="pw">Contraseña</label><a class="small" href="contacto.html">¿La olvidaste?</a></div>
+        <div class="row" style="flex-wrap:nowrap;gap:0;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding-right:4px"><input id="pw" type="password" autocomplete="current-password" aria-describedby="pw-err" style="flex:1;min-width:0;background:none;border:0;outline:none;padding:12px;min-height:48px">
+        <button type="button" id="toggle-pw" class="icon-btn" style="border:0;background:none" aria-label="Mostrar contraseña"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9AA8B8" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+        <span class="error-text" id="pw-err" hidden></span></div>
+      <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+      <button class="btn btn-ghost" type="button" id="demo">Entrar con la cuenta de demostración</button>
+      <span class="small muted" style="text-align:center">¿Solo quieres mirar? <a href="index.html">Explora sin cuenta</a></span>
+    </form>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

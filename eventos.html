@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventos · SaveSlot</title>
+<meta name="description" content="Torneos y sorteos de tus juegos, organizados por marcas, organizadores independientes y desarrolladoras.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="eventos" data-section="eventos">
+
+<main class="container page" style="gap:32px">
+  <div class="stack" style="gap:8px"><h1 class="page-title">Eventos</h1><p class="muted" style="font-size:17px;max-width:64ch">Torneos y sorteos virtuales de tus juegos. Los organizan marcas con organizadores independientes, o las mismas desarrolladoras.</p></div>
+  <div id="featured"></div>
+  <div class="row between">
+    <div class="row" style="gap:6px" id="event-tabs" role="group" aria-label="Tipo de evento">
+      <button class="chip" data-tab="Todos">Todos</button><button class="chip" data-tab="Torneos">Torneos</button><button class="chip" data-tab="Sorteos">Sorteos</button><button class="chip" data-tab="Gratis">Gratis</button>
+    </div>
+    <div class="row"><label for="org" class="small muted">Organiza</label><select class="select" id="org" style="min-height:44px;padding:8px 12px;background:var(--surface)"><option>Todos</option><option>Marcas y organizadores</option><option>Desarrolladoras oficiales</option><option>SaveSlot</option></select></div>
+  </div>
+  <div class="grid g-auto-300" id="event-grid"></div>
+  <section class="panel" id="reglas">
+    <h2 style="font-size:22px">Reglas generales de eventos</h2>
+    <ul class="soft" style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+      <li>Cada evento muestra quién lo organiza y quién lo patrocina.</li>
+      <li>El costo total se muestra antes de pagar. No hay suscripciones ni cargos recurrentes.</li>
+      <li>Los sorteos tienen siempre una forma gratuita de participar con XP.</li>
+      <li>¿Organizas torneos? <a class="link-strong" href="contacto.html">Propón un evento</a>.</li>
+    </ul>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

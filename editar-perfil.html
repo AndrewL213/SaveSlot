@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editar perfil · SaveSlot</title>
+<meta name="description" content="Edita tu perfil, tus 4 juegos favoritos y tus cuentas vinculadas.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="editar" data-section="perfil">
+
+<main class="container page" style="max-width:1080px">
+  <div class="card" id="welcome" hidden style="border-color:var(--good)"><b>¡Cuenta creada!</b><span class="soft small">Paso 2 y 3: vincula tus plataformas y elige tus 4 favoritos. Puedes hacerlo después.</span></div>
+  <div class="split">
+    <nav class="side" aria-label="Ajustes" style="flex:1 1 220px;gap:4px">
+      <a class="chip" href="#datos">Perfil público</a><a class="chip" href="#favoritos">Juegos favoritos</a><a class="chip" href="#generos">Géneros favoritos</a><a class="chip" href="#cuentas">Cuentas vinculadas</a>
+    </nav>
+    <form class="main" id="edit-form" novalidate>
+      <h1 class="page-title">Editar perfil</h1>
+      <section class="panel" id="datos">
+        <div class="row"><span class="avatar" id="avatar" style="width:84px;height:84px;border-radius:18px;font-size:32px;border:2px solid var(--accent)">S</span><span class="small muted">La foto de perfil llegará con el almacenamiento de archivos.</span></div>
+        <div class="form-grid">
+          <div class="field"><label for="nm">Nombre visible</label><input class="input" id="nm"><span class="error-text" id="nm-err" hidden></span></div>
+          <div class="field"><label for="us">Usuario</label><input class="input" id="us" disabled><span class="hint">El usuario no se puede cambiar.</span></div>
+        </div>
+        <div class="field"><label for="bio">Sobre mí <span class="muted" style="font-weight:400">(opcional)</span></label><textarea class="textarea" id="bio" rows="3" maxlength="190"></textarea></div>
+        <div class="field"><label for="playing">¿Qué estás jugando ahora?</label><select class="select" id="playing"></select><span class="hint">Cuando vincules Steam, esto se actualizará solo.</span></div>
+      </section>
+      <section class="panel" id="favoritos">
+        <div class="row between"><h2 style="font-size:22px">Juegos favoritos</h2><span class="small muted">Máximo 4</span></div>
+        <div class="grid g-4" id="favs"></div>
+        <div class="row" style="flex-wrap:nowrap"><label class="sr-only" for="fav-select">Agregar favorito</label><select class="select grow" id="fav-select"></select><button type="button" class="btn btn-secondary" id="fav-add">Agregar</button></div>
+        <span class="small muted" id="fav-hint" aria-live="polite"></span>
+      </section>
+      <section class="panel" id="generos"><h2 style="font-size:22px">Géneros favoritos</h2><div class="row" style="gap:8px" id="genre-chips"></div></section>
+      <section class="panel" id="cuentas"><div class="row between"><h2 style="font-size:22px">Cuentas vinculadas</h2><span class="small muted">+100 XP por cada una</span></div><div class="stack" style="gap:10px" id="accounts"></div></section>
+      <div class="row" style="justify-content:flex-end"><a class="btn btn-secondary" href="perfil.html">Cancelar</a><button class="btn btn-primary" type="submit">Guardar cambios</button></div>
+    </form>
+  </div>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

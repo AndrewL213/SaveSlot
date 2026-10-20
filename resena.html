@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escribir reseña · SaveSlot</title>
+<meta name="description" content="Escribe una reseña, guía o clip y regístralo en tu diario.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="resena" data-section="comunidad">
+
+<main class="container page" style="max-width:860px;gap:28px">
+  <div class="row" style="gap:18px;flex-wrap:nowrap">
+    <span id="r-cover"></span>
+    <div class="stack" style="gap:4px;min-width:0"><span class="eyebrow" id="eyebrow">Nueva reseña</span><h1 style="font-size:30px" id="r-title">…</h1><span class="small muted">Tus horas se pueden sincronizar desde tus cuentas vinculadas.</span></div>
+    <a class="btn btn-secondary btn-sm" id="cancel" href="juego.html" style="margin-left:auto">Cancelar</a>
+  </div>
+  <div class="seg" role="tablist" aria-label="Tipo de publicación" id="kind">
+    <button type="button" role="tab" data-k="resena">Reseña</button><button type="button" role="tab" data-k="guia">Guía</button><button type="button" role="tab" data-k="clip">Clip</button>
+  </div>
+  <form class="panel" id="review-form" novalidate style="padding:28px;gap:26px">
+    <fieldset style="border:0;margin:0;padding:0" class="stack"><legend class="label" style="margin-bottom:10px">Registrar en tu diario</legend>
+      <div class="form-grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));align-items:end">
+        <div class="field"><label for="fecha" style="font-weight:400" class="soft small">Fecha en que lo jugaste</label><input class="input" type="date" id="fecha"></div>
+        <div class="field"><label for="estado" style="font-weight:400" class="soft small">Estado</label><select class="select" id="estado"><option>Terminado</option><option>Rejugado</option><option>En progreso</option><option>Abandonado</option></select></div>
+        <div class="field"><label for="horas" style="font-weight:400" class="soft small">Horas jugadas</label><input class="input" type="number" min="0" max="5000" id="horas" placeholder="Ej. 40"></div>
+        <button type="button" class="btn btn-secondary" id="like" aria-pressed="false"><span style="color:var(--bad);font-size:18px">♥</span>Me gusta</button>
+      </div>
+    </fieldset>
+    <fieldset style="border:0;margin:0;padding:0" class="stack"><legend class="label" style="margin-bottom:10px">Tu calificación <span style="color:var(--accent-text);margin-left:8px" id="score-label"></span></legend>
+      <div class="grid" style="grid-template-columns:repeat(10,minmax(0,1fr));gap:6px" id="scores"></div></fieldset>
+    <fieldset style="border:0;margin:0;padding:0" class="stack"><legend class="label" style="margin-bottom:10px">¿Qué tan difícil fue? <span style="color:var(--bad);margin-left:8px" id="diff-label"></span></legend>
+      <div class="grid" style="grid-template-columns:repeat(10,minmax(0,1fr));gap:6px" id="diffs"></div>
+      <div class="row between xs muted"><span>1 · Relajado</span><span>10 · Brutal</span></div></fieldset>
+    <div class="stack" id="text-block">
+      <div class="field"><label for="tit">Título <span class="muted" style="font-weight:400">(opcional)</span></label><input class="input" id="tit" maxlength="80"></div>
+      <div class="field"><label for="txt" id="txt-label">Tu reseña</label><textarea class="textarea" id="txt" rows="6" maxlength="2000" aria-describedby="txt-err chars" placeholder="¿Qué te gustó, qué no y a quién se lo recomendarías?"></textarea>
+        <div class="row between xs muted"><span>Mínimo 50 caracteres</span><span id="chars">0 / 2.000</span></div><span class="error-text" id="txt-err" hidden>Escribe al menos 50 caracteres para publicar.</span></div>
+      <label class="check"><input type="checkbox" id="spoiler"><span><b>Contiene spoilers</b><br><span class="small muted">Ocultaremos el texto hasta que el lector decida verlo.</span></span></label>
+      <div class="card row" id="saved" hidden style="flex-direction:row;background:var(--surface-2);border:0"><span class="ok-text">✓</span><span class="small">Borrador guardado en este navegador. Si cierras, no lo pierdes.</span></div>
+    </div>
+    <div class="stack" id="clip-block" hidden>
+      <div class="field"><label for="clip">Archivo de video</label><input class="input" type="file" id="clip" accept="video/*"><span class="hint">MP4 o WebM, máximo 60 segundos.</span></div>
+    </div>
+    <div class="row between" style="border-top:1px solid var(--line);padding-top:20px">
+      <span class="small">Al publicar ganas <b style="color:var(--accent-text)">+50 XP</b>.</span>
+      <div class="row"><button type="button" class="btn btn-secondary" id="save-draft">Guardar borrador</button><button class="btn btn-primary" type="submit">Publicar</button></div>
+    </div>
+  </form>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

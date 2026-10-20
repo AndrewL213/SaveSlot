@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear cuenta · SaveSlot</title>
+<meta name="description" content="Crea tu cuenta gratis en SaveSlot.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="registro" data-section="cuenta">
+
+<main style="display:flex;flex-wrap:wrap">
+  <section style="flex:1 1 440px;min-width:0;background:var(--surface);border-right:1px solid var(--line);padding:48px;display:flex;flex-direction:column;gap:28px;justify-content:center">
+    <h1 style="font-size:clamp(32px,4vw,44px);letter-spacing:-.02em;max-width:480px">Crea tu cuenta en 3 pasos</h1>
+    <ol class="stack" style="margin:0;padding:0;list-style:none;gap:14px">
+      <li class="row" style="flex-wrap:nowrap"><span class="avatar" style="background:var(--accent);color:var(--accent-ink)">1</span><span><b>Tus datos</b><br><span class="small muted">Correo, usuario y contraseña</span></span></li>
+      <li class="row" style="flex-wrap:nowrap"><span class="avatar">2</span><span><b>Tus plataformas</b><br><span class="small muted">Vincula Steam o Xbox (puedes hacerlo después)</span></span></li>
+      <li class="row" style="flex-wrap:nowrap"><span class="avatar">3</span><span><b>Tus favoritos</b><br><span class="small muted">4 juegos y tus géneros, para que MatchPlay acierte</span></span></li>
+    </ol>
+    <span class="xs muted">Gratis. Sin tarjeta para registrarte.</span>
+  </section>
+  <section style="flex:1 1 440px;min-width:0;padding:48px 24px;display:flex;align-items:center;justify-content:center">
+    <form id="signup-form" novalidate class="stack" style="width:100%;max-width:440px;gap:16px">
+      <div class="seg" role="tablist" aria-label="Acceso"><a id="to-login" href="login.html" role="tab" aria-selected="false">Iniciar sesión</a><button type="button" role="tab" aria-selected="true">Crear cuenta</button></div>
+      <span class="eyebrow">Paso 1 de 3</span>
+      <h2 style="font-size:28px">Tus datos</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px"><button type="button" class="btn btn-secondary" data-oauth="Google">Google</button><button type="button" class="btn btn-secondary" data-oauth="Discord">Discord</button></div>
+      <div class="field"><label for="nm">Nombre</label><input class="input" id="nm" autocomplete="name"><span class="error-text" id="nm-err" hidden></span></div>
+      <div class="field"><label for="em">Correo</label><input class="input" id="em" type="email" autocomplete="email" placeholder="tu@correo.com"><span class="error-text" id="em-err" hidden></span></div>
+      <div class="field"><label for="us">Nombre de usuario</label><input class="input" id="us" autocomplete="username" placeholder="samluq"><span id="us-msg" class="hint" aria-live="polite"></span></div>
+      <div class="field"><label for="pw">Contraseña</label><input class="input" id="pw" type="password" autocomplete="new-password">
+        <div class="grid" id="strength" style="grid-template-columns:repeat(4,1fr);gap:4px"><i style="height:4px;border-radius:2px;background:var(--line)"></i><i style="height:4px;border-radius:2px;background:var(--line)"></i><i style="height:4px;border-radius:2px;background:var(--line)"></i><i style="height:4px;border-radius:2px;background:var(--line)"></i></div>
+        <span class="hint" id="strength-text" aria-live="polite">Escribe al menos 8 caracteres.</span><span class="error-text" id="pw-err" hidden></span></div>
+      <label class="check"><input type="checkbox" id="terms"><span>Acepto los términos y la política de privacidad.</span></label><span class="error-text" id="terms-err" hidden></span>
+      <button class="btn btn-primary btn-block" type="submit">Crear cuenta</button>
+      <p class="xs muted">Prototipo: tu cuenta se guarda solo en este navegador y la contraseña no se almacena.</p>
+    </form>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buscar juegos · SaveSlot</title>
+<meta name="description" content="Busca juegos y filtra por género, plataforma, tipo, duración y año.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="buscar" data-section="juegos">
+
+<main class="container page" style="gap:24px">
+  <form class="search-big" id="search-form" role="search" style="max-width:none">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9AA8B8" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <label class="sr-only" for="sq">Buscar</label>
+    <input id="sq" type="search" placeholder="Nombre del juego o género">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+  </form>
+  <div class="row between">
+    <h1 style="font-size:28px" id="count" aria-live="polite">Buscando…</h1>
+    <div class="row"><a class="btn btn-secondary btn-sm" href="random.html">Juego random</a><button class="btn btn-ghost" id="clear-all" type="button">Limpiar filtros</button></div>
+  </div>
+  <div class="split">
+    <form class="side panel" id="filters" aria-label="Filtros" style="gap:22px">
+      <fieldset style="border:0;margin:0;padding:0" class="stack"><legend class="label" style="margin-bottom:8px">Género</legend>
+        <label class="check"><input type="checkbox" name="genre" value="Aventura">Aventura</label>
+        <label class="check"><input type="checkbox" name="genre" value="RPG">RPG</label>
+        <label class="check"><input type="checkbox" name="genre" value="Acción">Acción</label>
+        <label class="check"><input type="checkbox" name="genre" value="Terror">Terror</label>
+        <label class="check"><input type="checkbox" name="genre" value="Shooter">Shooter</label>
+        <label class="check"><input type="checkbox" name="genre" value="Deportes">Deportes</label>
+        <label class="check"><input type="checkbox" name="genre" value="Roguelike">Roguelike</label>
+      </fieldset>
+      <fieldset style="border:0;margin:0;padding:0" class="stack"><legend class="label" style="margin-bottom:8px">Plataforma</legend>
+        <label class="check"><input type="checkbox" name="plat" value="PC">PC</label>
+        <label class="check"><input type="checkbox" name="plat" value="PlayStation">PlayStation</label>
+        <label class="check"><input type="checkbox" name="plat" value="Xbox">Xbox</label>
+        <label class="check"><input type="checkbox" name="plat" value="Nintendo">Nintendo</label>
+      </fieldset>
+      <div class="stack" style="gap:8px"><span class="label">Tipo</span><div class="row" style="gap:6px">
+        <button type="button" class="chip" data-type="Todos" aria-pressed="true">Todos</button><button type="button" class="chip" data-type="AAA" aria-pressed="false">AAA</button><button type="button" class="chip" data-type="Indie" aria-pressed="false">Indie</button></div></div>
+      <div class="stack" style="gap:8px"><span class="label">Duración de la historia</span><div class="row" style="gap:6px">
+        <button type="button" class="chip" data-length="corto" aria-pressed="false">&lt; 10 h</button><button type="button" class="chip" data-length="medio" aria-pressed="false">10–40 h</button><button type="button" class="chip" data-length="largo" aria-pressed="false">40 h +</button></div></div>
+      <div class="stack" style="gap:8px"><span class="label">Año de lanzamiento</span><div class="row" style="flex-wrap:nowrap">
+        <label class="sr-only" for="y1">Desde</label><input class="input" id="y1" inputmode="numeric" placeholder="Desde" style="width:100%;min-width:0">
+        <span class="muted">a</span>
+        <label class="sr-only" for="y2">Hasta</label><input class="input" id="y2" inputmode="numeric" placeholder="Hasta" style="width:100%;min-width:0"></div></div>
+    </form>
+    <div class="main" id="results" aria-live="polite"></div>
+  </div>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

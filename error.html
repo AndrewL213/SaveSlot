@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algo no salió bien · SaveSlot</title>
+<meta name="description" content="Información sobre fallos de APIs, límites de uso y funciones no disponibles.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="error" data-section="ayuda">
+
+<main class="container page" style="max-width:880px;gap:28px">
+  <section class="stack" style="gap:16px">
+    <div class="row" style="gap:10px"><span class="avatar" style="width:56px;height:56px;border-radius:14px;background:var(--bad-deep)" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2" stroke-linecap="round"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.5"/></svg></span><span class="badge badge-outline" id="code">Código</span></div>
+    <h1 class="page-title" id="title">Algo no salió bien</h1>
+    <p class="soft" style="font-size:18px;max-width:62ch" id="text"></p>
+    <p class="xs muted" id="detail" hidden></p>
+    <div class="row">
+      <a class="btn btn-primary" id="retry" href="index.html" hidden>Reintentar</a>
+      <a class="btn btn-primary" id="cta" href="index.html" hidden></a>
+      <a class="btn btn-secondary" href="index.html">Ir al inicio</a>
+      <a class="btn btn-ghost" href="contacto.html">Reportar el problema</a>
+    </div>
+  </section>
+  <section class="panel" id="tips-wrap"><h2 style="font-size:20px">Qué puedes hacer</h2><ul class="soft" style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px" id="tips"></ul></section>
+  <section class="section">
+    <div class="section-head"><h2 style="font-size:22px">Estado de los servicios</h2><span class="xs muted">Se actualiza al conectar cada API</span></div>
+    <div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Servicio</th><th>Proveedor</th><th>Estado</th></tr></thead><tbody id="status"></tbody></table></div>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diario · SaveSlot</title>
+<meta name="description" content="Tu diario de juegos: fecha, estado, horas y calificación.">
+<meta name="theme-color" content="#12161D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="diario" data-section="perfil">
+
+<main class="container page" style="gap:28px">
+  <nav class="crumbs" aria-label="Ruta" style="color:var(--muted)"><a href="perfil.html" style="color:var(--muted)">Mi perfil</a><span aria-hidden="true">/</span><span style="color:var(--fg)">Diario</span></nav>
+  <div class="row between" style="align-items:flex-end">
+    <div class="stack" style="gap:6px"><h1 class="page-title">Diario de juegos</h1><p class="muted">Cada juego que terminas, abandonas o rejuegas, con su fecha y tu calificación.</p></div>
+    <a class="btn btn-primary" href="buscar.html">+ Registrar juego</a>
+  </div>
+  <section class="grid" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr))" id="summary" aria-label="Resumen del año"></section>
+  <div class="row" style="gap:8px">
+    <label for="yr" class="small muted">Año</label><select class="select" id="yr" style="min-height:44px;padding:8px 12px;background:var(--surface)"></select>
+    <button class="chip" data-state="Todos" aria-pressed="true">Todos</button><button class="chip" data-state="Terminado" aria-pressed="false">Terminados</button><button class="chip" data-state="Rejugado" aria-pressed="false">Rejugados</button><button class="chip" data-state="Abandonado" aria-pressed="false">Abandonados</button><button class="chip" data-state="Con reseña" aria-pressed="false">Con reseña</button>
+  </div>
+  <div class="table-wrap"><table style="min-width:880px"><thead><tr><th>Mes</th><th>Día</th><th>Juego</th><th>Estado</th><th>Horas</th><th>Calificación</th><th style="text-align:center">Me gusta</th><th style="text-align:center">Reseña</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-juegos.js"></script>
+<script src="js/pages-cuenta.js"></script>
+</body>
+</html>
